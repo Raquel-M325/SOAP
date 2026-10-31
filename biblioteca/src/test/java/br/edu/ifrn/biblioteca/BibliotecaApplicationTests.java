@@ -1,10 +1,10 @@
-package br.edu.ifrn.soap;
+package br.edu.ifrn.biblioteca;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SoapApplicationTests {
+class BibliotecaApplicationTests {
 
 	@Test
 	void contextLoads() {

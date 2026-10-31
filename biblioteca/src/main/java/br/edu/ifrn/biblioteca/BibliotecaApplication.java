@@ -1,13 +1,13 @@
-package br.edu.ifrn.soap;
+package br.edu.ifrn.biblioteca;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SoapApplication {
+public class BibliotecaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SoapApplication.class, args);
+		SpringApplication.run(BibliotecaApplication.class, args);
 	}
 
 }

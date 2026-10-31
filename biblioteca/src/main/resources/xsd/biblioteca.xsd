@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://ifrn.edu.br/biblioteca"
+    targetNamespace="http://ifrn.edu.br/biblioteca"
+    elementFormDefault="qualified">
+
+    <xs:complexType name="LivroType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="autor" type="xs:string"/>
+            <xs:element name="dataPublicacao" type="xs:date"/>
+            <xs:element name="descricao" type="xs:string"/>
+            <xs:element name="quantidadePaginas" type="xs:int"/>
+            <xs:element name="quantidadeDisponivel" type="xs:int"/>
+            <xs:element name="genero" type="xs:string"/>
+            <xs:element name="idioma" type="xs:string"/>
+            <xs:element name="editora" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
