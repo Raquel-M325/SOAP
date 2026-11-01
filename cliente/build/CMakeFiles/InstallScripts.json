@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/raquelmartiniano/SOAP/cliente/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
