@@ -21,4 +21,37 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:element name="consultarLivroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="consultarLivroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="livro" type="tns:LivroType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Não pede nada para listar livros -->
+    <xs:element name="listarLivrosRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="listarLivrosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element
+                    name="livro"
+                    type="tns:LivroType"
+                    minOccurs="0" 
+                    maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>
