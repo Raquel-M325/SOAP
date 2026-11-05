@@ -1,3 +1,0 @@
-/home/raquelmartiniano/SOAP/cliente/build/CMakeFiles/biblioteca_cliente.dir
-/home/raquelmartiniano/SOAP/cliente/build/CMakeFiles/edit_cache.dir
-/home/raquelmartiniano/SOAP/cliente/build/CMakeFiles/rebuild_cache.dir
