@@ -1,3 +1,4 @@
+
 from LivroCliente import LivroCliente
 
 class main:
@@ -21,9 +22,9 @@ class main:
                     print(livro)
 
             elif opcao == "2":
-                id = input("Digite o ID do livro: ")
+                id_livro = input("Digite o ID do livro: ")
 
-                livro = cliente.consultarLivro(id)
+                livro = cliente.consultarLivro(id_livro)
 
                 print(livro)
 
