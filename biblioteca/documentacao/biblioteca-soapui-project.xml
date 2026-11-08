@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bb83fa2d-7ca2-49a2-a22e-868e27fd7e93" activeEnvironment="Default" name="biblioteca" resourceRoot="" soapui-version="5.10.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7924ee92-440f-4644-b19e-bf7bdc5dc1dd" wsaVersion="NONE" name="BibliotecaPortSoap11" type="wsdl" bindingName="{http://biblioteca.ifrn.edu.br}BibliotecaPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/biblioteca.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="CreateWsdlDocumentationAction@report-directory">/home/raquelmartiniano/Documentos</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/biblioteca.wsdl"><con:part><con:url>http://localhost:8080/ws/biblioteca.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://biblioteca.ifrn.edu.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://biblioteca.ifrn.edu.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://biblioteca.ifrn.edu.br">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://biblioteca.ifrn.edu.br" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="LivroType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="titulo" type="xs:string"/>
+          <xs:element name="autor" type="xs:string"/>
+          <xs:element name="dataPublicacao" type="xs:date"/>
+          <xs:element name="descricao" type="xs:string"/>
+          <xs:element name="quantidadePaginas" type="xs:int"/>
+          <xs:element name="quantidadeDisponivel" type="xs:int"/>
+          <xs:element name="genero" type="xs:string"/>
+          <xs:element name="idioma" type="xs:string"/>
+          <xs:element name="editora" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="consultarLivroRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="consultarLivroResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="livro" type="tns:LivroType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Não pede nada para listar livros-->
+      <xs:element name="listarLivrosRequest">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="listarLivrosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livro" type="tns:LivroType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarLivroResponse">
+    <wsdl:part element="tns:consultarLivroResponse" name="consultarLivroResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarLivrosRequest">
+    <wsdl:part element="tns:listarLivrosRequest" name="listarLivrosRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarLivrosResponse">
+    <wsdl:part element="tns:listarLivrosResponse" name="listarLivrosResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarLivroRequest">
+    <wsdl:part element="tns:consultarLivroRequest" name="consultarLivroRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BibliotecaPort">
+    <wsdl:operation name="consultarLivro">
+      <wsdl:input message="tns:consultarLivroRequest" name="consultarLivroRequest"></wsdl:input>
+      <wsdl:output message="tns:consultarLivroResponse" name="consultarLivroResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarLivros">
+      <wsdl:input message="tns:listarLivrosRequest" name="listarLivrosRequest"></wsdl:input>
+      <wsdl:output message="tns:listarLivrosResponse" name="listarLivrosResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BibliotecaPortSoap11" type="tns:BibliotecaPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarLivro">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="consultarLivroRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarLivroResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarLivros">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="listarLivrosRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarLivrosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BibliotecaPortService">
+    <wsdl:port binding="tns:BibliotecaPortSoap11" name="BibliotecaPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="19e7358f-d382-44d5-8856-2567caa00030" isOneWay="false" action="" name="consultarLivro" bindingOperationName="consultarLivro" type="Request-Response" outputName="consultarLivroResponse" inputName="consultarLivroRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e426834c-1797-4219-b39c-13edaa5f516f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://biblioteca.ifrn.edu.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bib:consultarLivroRequest>
+         <bib:id>L01</bib:id>
+      </bib:consultarLivroRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://biblioteca.ifrn.edu.br/BibliotecaPort/consultarLivroRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0e378e52-c1d1-4f10-9486-c34d6ebaeeb1" isOneWay="false" action="" name="listarLivros" bindingOperationName="listarLivros" type="Request-Response" outputName="listarLivrosResponse" inputName="listarLivrosRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62f58a4f-01d3-44bf-8aa2-4a9e68c1d773" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://biblioteca.ifrn.edu.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bib:listarLivrosRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://biblioteca.ifrn.edu.br/BibliotecaPort/listarLivrosRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="373b8870-8ccf-4cf2-82a3-f046c97cef5e" name="BibliotecaTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a3a1500a-e594-4e85-b210-939d19e171db" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestarListarLivros" searchProperties="true"><con:settings/><con:testStep type="request" name="ListarLivros" id="843c3092-f41a-4311-a0f6-ad9deccef896"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BibliotecaPortSoap11</con:interface><con:operation>listarLivros</con:operation><con:request name="ListarLivros" id="3b543edd-13fc-47aa-829c-b62ce37aea05"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://biblioteca.ifrn.edu.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bib:listarLivrosRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="383dbcf3-3584-4f42-9ae5-19587266f9d3"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a42f0124-e625-496e-9b8c-d6716d24c4f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestarConsultarLivro" searchProperties="true"><con:settings/><con:testStep type="request" name="ConsultarLivro" id="30e5bd79-7634-4f4b-b074-1f9d74c7ff6d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BibliotecaPortSoap11</con:interface><con:operation>consultarLivro</con:operation><con:request name="ConsultarLivro" id="57a66e0b-d8b5-47d6-8e1a-1b41abb3c689"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bib="http://biblioteca.ifrn.edu.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bib:consultarLivroRequest>
+         <bib:id>L01</bib:id>
+      </bib:consultarLivroRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="938d3477-7546-4a76-adf5-965cc58bdca8"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
