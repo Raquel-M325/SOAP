@@ -1,4 +1,3 @@
-
 package br.edu.ifrn.biblioteca.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -36,9 +35,11 @@ public class WebServiceConfig {
     }
 
     @Bean(name = "biblioteca")
-    public DefaultWsdl11Definition bibliotecaWsdl(XsdSchema bibliotecaSchema) {
+    public DefaultWsdl11Definition bibliotecaWsdl(
+            XsdSchema bibliotecaSchema) {
 
-        DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition();
+        DefaultWsdl11Definition wsdl =
+            new DefaultWsdl11Definition();
 
         wsdl.setPortTypeName("BibliotecaPort");
         wsdl.setLocationUri("/ws");
